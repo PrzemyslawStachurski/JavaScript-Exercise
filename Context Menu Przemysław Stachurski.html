@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Menu kontekstowe</title>
+	<style type="text/css">	
+		#main_button{
+			padding: 10px 10px;
+		}
+		#mapa{
+			cursor: pointer;
+			background-color: lightblue;
+		}
+		#geo{
+			cursor: pointer;
+			background-color: lightblue;
+		}
+		.menu_context{
+			border: 1px solid lightgrey;
+			box-shadow: 1px 1px 10px rgba(0,0,0,0.3);
+			padding:  10px ;
+			width:200;
+			list-style: none;
+		}
+		.mapa:hover{
+			background-color: lightgrey;
+		}
+		.geo:hover{
+			background-color: lightgrey;
+		}
+
+	</style>
+</head>
+<body>
+	<ul class=menu_context>
+		<li><a href="mapa.html" id="mapa">Mapa google</a></li>
+		<li><a href="geo.html" id="geo">Geolokacja</a></li>
+		<li>Element 3</li>
+		<li>Element 4</li>
+	</ul>
+	<div >
+		<button id ="main_button">Kliknij tutaj</button>
+	</div>
+<script type="text/javascript">
+const menu = document.querySelector('.menu-context');
+
+
+function removeMenu() {
+    menu.style.left = '-9999px';
+    menu.style.top = '-9999px';
+}
+
+function rightButton(e) {
+    e.preventDefault();
+
+    if (e.button === 2) {
+        menu.style.left = e.pageX + 10 + 'px';
+        menu.style.top = e.pageY + 10 + 'px';
+    }
+}
+
+
+	const block = document.querySelector('#main_button');
+		block.addEventListener('mousedown', rightButton);
+
+	block.addEventListener('contextmenu', function(e) {
+	    e.preventDefault();
+	});//wyłączenie menu domyślnego
+
+	const item1 = document.querySelector('#mapa');
+		item1.addEventListener('mousedown');
+	const item2 = document.querySelector('#geo');
+		item1.addEventListener('mousedown');
+
+	//tu zamykanie menu po kliknięciu w inne miejsce strony
+	</script>
+
+</body>
+</html>
