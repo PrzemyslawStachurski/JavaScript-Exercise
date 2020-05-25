@@ -1,2 +1,2 @@
 # JavaScript-Exercise
-repozytorium przeznaczone do umieszczania zadań z zajęć o tematyce JavaScript
+Repozytorium przeznaczone do umieszczania zadań związanych z JavaScript HTML i CSS.
